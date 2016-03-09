@@ -3,23 +3,27 @@
 namespace DashboardBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use DashboardBundle\Form\Type\AlimentType;
 
 Class AlimentController extends Controller
 {
 
     public function addAction()
     {
-        return $this->render('DashboardBundle:Aliment:add.html.twig');
+        $aliment = null;
+        $form = $this->createForm(AlimentType::class, $aliment);
+        return $this->render('DashboardBundle:Aliment:add.html.twig', array(
+            'form' => $form->createView()
+        ));
     }
 
-    public function listAliment()
+    public function listAction()
     {
-        return false;
+        return $this->render('DashboardBundle:Aliment:list.html.twig');
     }
 
-    public function editAliment()
+    public function editAction()
     {
-        return false;
     }
 
 }
