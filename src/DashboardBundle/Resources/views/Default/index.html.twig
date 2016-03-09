@@ -1,0 +1,34 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Mon tableau de bord {% endblock %}
+
+{% block body %}
+    <div class="app">
+        <!-- Header -->
+        <div class="header">
+            {% include 'DashboardBundle:includes:Default/header.html.twig' %}
+        </div>
+        <!-- Header -->
+        <!-- Sidebar -->
+        <div class="sidebar">
+            {% include 'DashboardBundle:includes:Default/sidebar.html.twig' %}
+        </div>
+        <!-- Sidebar -->
+        <!-- Content -->
+        <div class="content">
+            <div class="container">
+                {% block content %}
+                {% endblock %}
+            </div>
+
+        </div>
+        <!-- Content -->
+        <!-- Footer -->
+        <div class="footer">
+            {% include 'DashboardBundle:includes:Default/footer.html.twig' %}
+        </div>
+        <!-- Footer -->
+    </div>
+{% endblock %}
+
+

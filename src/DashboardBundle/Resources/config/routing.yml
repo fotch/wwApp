@@ -1,0 +1,7 @@
+dashboard:
+    path: /
+    defaults: {_controller: DashboardBundle:Dashboard:index}
+
+dashboard_aliments:
+    path: /aliments/add
+    defaults: {_controller: DashboardBundle:Aliment:add}

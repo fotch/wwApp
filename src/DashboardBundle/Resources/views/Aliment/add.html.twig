@@ -1,0 +1,35 @@
+{% extends 'DashboardBundle:Default:index.html.twig' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col s6">
+            <form action="">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text">
+                        <label for="email" data-error="wrong" data-success="right">Nom de l'aliment</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select>
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                        <label>Catégorie</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text">
+                        <label for="email" data-error="wrong" data-success="right">Nombre de points</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
