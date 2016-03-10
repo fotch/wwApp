@@ -19,7 +19,14 @@ Class AlimentController extends Controller
 
     public function listAction()
     {
-        return $this->render('DashboardBundle:Aliment:list.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('DashboardBundle:Aliment');
+
+        $aliment = $repository->findAll();
+
+        return $this->render('DashboardBundle:Aliment:list.html.twig', array(
+            'aliments' => $aliment
+        ));
     }
 
     public function editAction()

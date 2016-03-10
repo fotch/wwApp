@@ -1,8 +1,11 @@
 {% extends 'DashboardBundle:Default:index.html.twig' %}
-
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset("/bundles/framework/js/vendor/datatables-bootstrap/dataTables.bootstrap.css") }}">
+{% endblock %}
 {% block content %}
+
     <div class="page-header">
-        <h1 class="page-title">Liste des aliments</h1>
+        <h1 class="page-title">Tous les aliments</h1>
         <div class="page-header-actions">
             <ol class="breadcrumb">
                 <li><a href="#">tableau de bord</a></li>
@@ -11,5 +14,90 @@
         </div>
     </div>
 
+    <div class="page-content">
+        <div class="panel">
+            <header class="panel-heading">
+                <h3 class="panel-title">Liste</h3>
+            </header>
+            <div class="panel-body">
+                <table id="aliments_liste" class="table table-hover dataTable table-striped width-full">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Catégorie</th>
+                            <th>Quantité</th>
+                            <th>Points</th>
+                            <th>Ajouté par</th>
+                            <th>Date d'ajout</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for aliment in aliments %}
+                        <tr>
+                            <td>{{ aliment.name }}</td>
+                            <td>Viande</td>
+                            <td>{{ aliment.quantityValue }} {{ aliment.quantityType }}</td>
+                            <td>26</td>
+                            <td>2014/06/13</td>
+                            <td>$635,852</td>
+                        </tr>
+                    {% endfor %}
+                        <tr>
+                            <td>Torrey</td>
+                            <td>3658 Richie Street</td>
+                            <td>West Sedrickstad</td>
+                            <td>28</td>
+                            <td>2014/09/12</td>
+                            <td>$243,577</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset("/bundles/framework/js/vendor/datatables/jquery.dataTables.js") }}"></script>
+    <script src="{{ asset("/bundles/framework/js/vendor/datatables-fixedheader/dataTables.fixedHeader.js") }}"></script>
+    <script src="{{ asset("/bundles/framework/js/vendor/datatables-bootstrap/dataTables.bootstrap.js") }}"></script>
+    <script src="{{ asset("/bundles/framework/js/vendor/datatables-responsive/dataTables.responsive.js") }}"></script>
+    <script src="{{ asset("/bundles/framework/js/vendor/datatables-tabletools/dataTables.tableTools.js") }}"></script>
+
+    <script src="{{ asset("/bundles/framework/js/components/datatables.js") }}"></script>
+
+    <script type="text/javascript">
+        (function() {
+            $(document).ready(function() {
+                var defaults = $.components.getDefaults("dataTable");
+
+                var options = $.extend(true, {}, defaults, {
+                    initComplete: function() {
+                        this.api().columns().every(function() {
+                            var column = this;
+                            var select = $('<select class="form-control width-full"><option value=""></option></select>')
+                                    .appendTo($(column.footer()).empty())
+                                    .on('change', function() {
+                                        var val = $.fn.dataTable.util.escapeRegex(
+                                                $(this).val()
+                                        );
+
+                                        column
+                                                .search(val ? '^' + val + '$' : '', true, false)
+                                                .draw();
+                                    });
+
+                            column.data().unique().sort().each(function(d, j) {
+                                select.append('<option value="' + d + '">' + d + '</option>')
+                            });
+                        });
+                    }
+                });
+
+                $('#aliments_liste').DataTable(options);
+            });
+        })();
+    </script>
 {% endblock %}
