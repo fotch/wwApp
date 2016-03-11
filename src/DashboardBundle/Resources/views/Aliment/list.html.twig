@@ -31,14 +31,24 @@
                             <th>Date d'ajout</th>
                         </tr>
                     </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Age</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                        </tr>
+                    </tfoot>
                     <tbody>
                     {% for aliment in aliments %}
                         <tr>
                             <td>{{ aliment.name }}</td>
                             <td>Viande</td>
-                            <td>{{ aliment.quantityValue }} {{ aliment.quantityType }}</td>
-                            <td>26</td>
-                            <td>2014/06/13</td>
+                            <td>{{ aliment.quantityValue }} </td>
+                            <td>{{ aliment.point }}</td>
+                            <td>{{ aliment.point }}</td>
                             <td>$635,852</td>
                         </tr>
                     {% endfor %}

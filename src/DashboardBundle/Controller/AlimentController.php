@@ -29,6 +29,11 @@ Class AlimentController extends Controller
         ));
     }
 
+    public function getCategory()
+    {
+
+    }
+
     public function editAction()
     {
     }
