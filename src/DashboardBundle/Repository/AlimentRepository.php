@@ -12,4 +12,16 @@ use Doctrine\ORM\EntityRepository;
  */
 class AlimentRepository extends EntityRepository
 {
+
+    public function addAll()
+    {
+        $qb = $this->createQueryBuilder('a');
+
+        $query = $qb;
+
+        $result = $query->getQuery()->execute();
+
+        return $result;
+    }
+
 }

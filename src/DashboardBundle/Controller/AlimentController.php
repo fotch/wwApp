@@ -22,7 +22,7 @@ Class AlimentController extends Controller
         $em = $this->getDoctrine()->getManager();
         $repository = $em->getRepository('DashboardBundle:Aliment');
 
-        $aliment = $repository->findAll();
+        $aliment = $repository->getAll();
 
         return $this->render('DashboardBundle:Aliment:list.html.twig', array(
             'aliments' => $aliment
