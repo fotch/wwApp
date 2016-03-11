@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d55a64a-9fbe-483a-8752-19767b8dfb94" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DashboardBundle/Entity/Category.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DashboardBundle/Repository/CategoryRepository.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/DashboardBundle/Resources/views/Aliment/AlimentRepository.php" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DashboardBundle/Entity/Quantity.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DashboardBundle/Repository/QuantityRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DashboardBundle/Controller/AlimentController.php" afterPath="$PROJECT_DIR$/src/DashboardBundle/Controller/AlimentController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DashboardBundle/Entity/Aliment.php" afterPath="$PROJECT_DIR$/src/DashboardBundle/Entity/Aliment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DashboardBundle/Repository/AlimentRepository.php" afterPath="$PROJECT_DIR$/src/DashboardBundle/Repository/AlimentRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DashboardBundle/Entity/Category.php" afterPath="$PROJECT_DIR$/src/DashboardBundle/Entity/Category.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DashboardBundle/Resources/views/Aliment/list.html.twig" afterPath="$PROJECT_DIR$/src/DashboardBundle/Resources/views/Aliment/list.html.twig" />
     </list>
     <ignored path="wwApp.iws" />
@@ -41,8 +40,8 @@
       <file leaf-file-name="list.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DashboardBundle/Resources/views/Aliment/list.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.178572">
-              <caret line="47" column="54" selection-start-line="47" selection-start-column="54" selection-end-line="47" selection-end-column="54" />
+            <state vertical-scroll-proportion="-6.857143">
+              <caret line="48" column="59" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -51,8 +50,8 @@
       <file leaf-file-name="AlimentController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DashboardBundle/Controller/AlimentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.285715">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state vertical-scroll-proportion="-11.642858">
+              <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
               <folding>
                 <element signature="e#46#103#0#PHP" expanded="true" />
               </folding>
@@ -63,7 +62,7 @@
       <file leaf-file-name="AlimentRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DashboardBundle/Repository/AlimentRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.714285">
+            <state vertical-scroll-proportion="-15.071428">
               <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
               <folding />
             </state>
@@ -73,8 +72,8 @@
       <file leaf-file-name="Category.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DashboardBundle/Entity/Category.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.857143">
-              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+            <state vertical-scroll-proportion="-9.428572">
+              <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
               <folding>
                 <element signature="e#42#90#0#PHP" expanded="true" />
               </folding>
@@ -82,11 +81,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Aliment.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Quantity.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/DashboardBundle/Entity/Quantity.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.47323942">
+              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Aliment.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DashboardBundle/Entity/Aliment.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.371831">
-              <caret line="56" column="24" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
+            <state vertical-scroll-proportion="-19.714285">
+              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -123,11 +132,12 @@
         <option value="$PROJECT_DIR$/src/DashboardBundle/Resources/views/Aliment/add.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/DashboardBundle/Resources/views/Aliment/AlimentRepository.php" />
-        <option value="$PROJECT_DIR$/src/DashboardBundle/Resources/views/Aliment/list.html.twig" />
         <option value="$PROJECT_DIR$/src/DashboardBundle/Repository/AlimentRepository.php" />
-        <option value="$PROJECT_DIR$/src/DashboardBundle/Controller/AlimentController.php" />
         <option value="$PROJECT_DIR$/src/DashboardBundle/Entity/Category.php" />
         <option value="$PROJECT_DIR$/src/DashboardBundle/Entity/Aliment.php" />
+        <option value="$PROJECT_DIR$/src/DashboardBundle/Controller/AlimentController.php" />
+        <option value="$PROJECT_DIR$/src/DashboardBundle/Resources/views/Aliment/list.html.twig" />
+        <option value="$PROJECT_DIR$/src/DashboardBundle/Entity/Quantity.php" />
       </list>
     </option>
   </component>
@@ -193,6 +203,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -547,8 +559,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -634,7 +644,13 @@
       <option name="project" value="LOCAL" />
       <updated>1457680625121</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add EntityRepository">
+      <created>1457713390587</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1457713390587</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -987,7 +1003,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -995,7 +1010,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5070422">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1003,50 +1017,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.03380282">
           <caret line="15" column="28" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DashboardBundle/Controller/AlimentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.285715">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="e#46#103#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DashboardBundle/Repository/AlimentRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.714285">
-          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DashboardBundle/Resources/views/Aliment/list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.178572">
-          <caret line="47" column="54" selection-start-line="47" selection-start-column="54" selection-end-line="47" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DashboardBundle/Entity/Category.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.857143">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        <state vertical-scroll-proportion="-9.428572">
+          <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
           <folding>
             <element signature="e#42#90#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/DashboardBundle/Repository/AlimentRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.071428">
+          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DashboardBundle/Controller/AlimentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.642858">
+          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+          <folding>
+            <element signature="e#46#103#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DashboardBundle/Resources/views/Aliment/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.857143">
+          <caret line="48" column="59" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/DashboardBundle/Entity/Aliment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.371831">
-          <caret line="56" column="24" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
+        <state vertical-scroll-proportion="-19.714285">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DashboardBundle/Entity/Quantity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47323942">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>
       </provider>

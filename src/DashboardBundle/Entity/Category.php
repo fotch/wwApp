@@ -27,7 +27,7 @@ class Category
      *
      * @ORM\Column(name="name", type="string", length=255)
      */
-    protected $name;
+    private $name;
 
     /**
      * @ORM\OneToMany(targetEntity="Aliment", mappedBy="category")

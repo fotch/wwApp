@@ -17,24 +17,24 @@ Class AlimentController extends Controller
         ));
     }
 
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function listAction()
     {
         $em = $this->getDoctrine()->getManager();
-
         $repository = $em->getRepository('DashboardBundle:Aliment');
-
         $aliment = $repository->getAll();
 
-        var_dump($aliment); die;
+        foreach($aliment as $key => $value) {
+            $categoryName = $value->getCategory()->getName();
+            //$quantityType = $value->getQuantity()->getType();
+        }
 
+        //var_dump($aliment); die;
         return $this->render('DashboardBundle:Aliment:list.html.twig', array(
             'aliments' => $aliment
         ));
-    }
-
-    public function getCategory()
-    {
-
     }
 
     public function editAction()

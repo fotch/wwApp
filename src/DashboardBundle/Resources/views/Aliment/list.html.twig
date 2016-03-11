@@ -45,21 +45,13 @@
                     {% for aliment in aliments %}
                         <tr>
                             <td>{{ aliment.name }}</td>
-                            <td>{{ aliment.category.id }}</td>
+                            <td>{{ aliment.category.name }}</td>
                             <td>{{ aliment.quantityValue }} </td>
                             <td>{{ aliment.point }}</td>
                             <td>{{ aliment.point }}</td>
-                            <td>$635,852</td>
+                            <td>{{ aliment.date.date }}</td>
                         </tr>
                     {% endfor %}
-                        <tr>
-                            <td>Torrey</td>
-                            <td>3658 Richie Street</td>
-                            <td>West Sedrickstad</td>
-                            <td>28</td>
-                            <td>2014/09/12</td>
-                            <td>$243,577</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
