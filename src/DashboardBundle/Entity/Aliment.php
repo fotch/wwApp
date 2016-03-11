@@ -19,7 +19,7 @@ class Aliment
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
@@ -49,6 +49,28 @@ class Aliment
      */
     private $date;
 
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="aliment")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     */
+    protected $category;
+
+    /**
+    * @return mixed
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param $category
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+    }
 
     /**
      * Get id
