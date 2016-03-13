@@ -2,9 +2,9 @@ dashboard:
     path: /
     defaults: {_controller: DashboardBundle:Dashboard:index}
 
-dashboard_aliments_add:
-    path: /aliments/add
-    defaults: {_controller: DashboardBundle:Aliment:add}
+dashboard_aliments_create:
+    path: /aliments/create
+    defaults: {_controller: DashboardBundle:Aliment:create}
 
 dashboard_aliments_list:
     path: /aliments/list

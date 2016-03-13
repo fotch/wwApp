@@ -2,18 +2,42 @@
 
 namespace DashboardBundle\Controller;
 
+use DashboardBundle\Entity\Category;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use DashboardBundle\Form\Type\AlimentType;
+use DashboardBundle\Entity\Aliment;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\HttpFoundation\Request;
 
 Class AlimentController extends Controller
 {
 
-    public function addAction()
+    public function createAction(Request $request)
     {
         $aliment = null;
-        $form = $this->createForm(AlimentType::class, $aliment);
-        return $this->render('DashboardBundle:Aliment:add.html.twig', array(
-            'form' => $form->createView()
+        $em = $this->getDoctrine()->getManager();
+
+        $categories = $em
+            ->getRepository('DashboardBundle:Category')
+            ->findAll();
+        ;
+        $quantityTypes = $em
+            ->getRepository('DashboardBundle:Quantity')
+            ->findAll();
+        ;
+        $form = $this->createForm(new AlimentType(), new Aliment());
+
+        $form->handleRequest($request);
+
+        if($request->isMethod('post') && $form->isValid()) {
+            $data = $form->getData();
+
+            var_dump($data); die;
+        }
+        return $this->render('DashboardBundle:Aliment:create.html.twig', array(
+            'form' => $form->createView(),
+            'categories' => $categories,
+            'quantityTypes' => $quantityTypes
         ));
     }
 
@@ -28,7 +52,7 @@ Class AlimentController extends Controller
 
         foreach($aliment as $key => $value) {
             $categoryName = $value->getCategory()->getName();
-            //$quantityType = $value->getQuantity()->getType();
+            $quantityType = $value->getQuantity()->getType();
         }
 
         //var_dump($aliment); die;

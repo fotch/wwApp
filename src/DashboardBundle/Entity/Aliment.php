@@ -72,8 +72,25 @@ class Aliment
         $this->category = $category;
     }
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Quantity")
+     * @ORM\JoinColumn(name="quantity_id", referencedColumnName="id")
+     */
 
+    protected $quantity;
 
+    /**
+     * @return mixed
+     */
+    public function getQuantity()
+    {
+        return $this->quantity;
+    }
+
+    public function setQuantity($quantity)
+    {
+        $this->quantity = $quantity;
+    }
     /**
      * Get id
      *

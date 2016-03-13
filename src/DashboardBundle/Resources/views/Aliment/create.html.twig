@@ -1,0 +1,57 @@
+{% extends 'DashboardBundle:Default:index.html.twig' %}
+
+{% block content %}
+
+    <div class="page-header">
+        <h1 class="page-title">Ajouter un aliment</h1>
+        <div class="page-header-actions">
+            <ol class="breadcrumb">
+                <li><a href="#">tableau de bord</a></li>
+                <li class="active">ajouter un aliment</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="page-content container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="panel">
+                    <div class="panel-heading"></div>
+                    <div class="panel-body container-fluid">
+                        {{ form_start(form) }}
+                        <div class="form-group form-material">
+                            <label class="control-label" for="name">Nom de l'aliment</label>
+                            {{ form_widget(form.name, { 'attr': {'class': 'form-control'} }) }}
+                        </div>
+                        <div class="form-group form-material">
+                            <label class="control-label" for="select">Catégorie</label>
+                            {{ form_widget(form.category, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="form-group form-material row">
+                            <div class="col-sm-6">
+                                <label class="control-label" for="quantityValue">Quantité</label>
+                                {{ form_widget(form.quantityValue, { 'attr': {'class': 'form-control'} }) }}
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group form-material">
+                                    <label class="control-label" for="select">Select</label>
+                                    {{ form_widget(form.quantity, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group form-material">
+                            <label class="control-label" for="point">Points</label>
+                            {{ form_widget(form.point, { 'attr': {'class': 'form-control'} }) }}
+                        </div>
+                        <div class="form-group form-material">
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Ajouter</button>
+                        </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

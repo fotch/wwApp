@@ -46,10 +46,10 @@
                         <tr>
                             <td>{{ aliment.name }}</td>
                             <td>{{ aliment.category.name }}</td>
-                            <td>{{ aliment.quantityValue }} </td>
+                            <td>{{ aliment.quantityValue }} {{ aliment.quantity.type }}</td>
                             <td>{{ aliment.point }}</td>
-                            <td>{{ aliment.point }}</td>
-                            <td>{{ aliment.date.date }}</td>
+                            <td>Fotch</td>
+                            <td>{{ aliment.date.date|date('d/m/Y') }}</td>
                         </tr>
                     {% endfor %}
                     </tbody>
