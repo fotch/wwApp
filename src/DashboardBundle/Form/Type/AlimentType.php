@@ -32,7 +32,7 @@ class AlimentType extends AbstractType
             ))
             ->add('point')
 
-            ->add('submit', SubmitType::class)
+            ->add('ajouter', SubmitType::class)
             //->add('quantityType')
         ;
     }

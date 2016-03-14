@@ -17,15 +17,7 @@ Class AlimentController extends Controller
         $aliment = null;
         $em = $this->getDoctrine()->getManager();
 
-        $categories = $em
-            ->getRepository('DashboardBundle:Category')
-            ->findAll();
-        ;
-        $quantityTypes = $em
-            ->getRepository('DashboardBundle:Quantity')
-            ->findAll();
-        ;
-        $form = $this->createForm(new AlimentType(), new Aliment());
+        $form = $this->createForm(AlimentType::class, new Aliment());
 
         $form->handleRequest($request);
 
@@ -35,9 +27,7 @@ Class AlimentController extends Controller
             var_dump($data); die;
         }
         return $this->render('DashboardBundle:Aliment:create.html.twig', array(
-            'form' => $form->createView(),
-            'categories' => $categories,
-            'quantityTypes' => $quantityTypes
+            'form' => $form->createView()
         ));
     }
 

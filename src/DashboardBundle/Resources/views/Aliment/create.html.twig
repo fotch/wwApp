@@ -16,11 +16,13 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="panel">
-                    <div class="panel-heading"></div>
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Informations de l'aliment</h3>
+                    </div>
                     <div class="panel-body container-fluid">
                         {{ form_start(form) }}
                         <div class="form-group form-material">
-                            <label class="control-label" for="name">Nom de l'aliment</label>
+                            <label class="control-label" for="name">Nom</label>
                             {{ form_widget(form.name, { 'attr': {'class': 'form-control'} }) }}
                         </div>
                         <div class="form-group form-material">
@@ -34,7 +36,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group form-material">
-                                    <label class="control-label" for="select">Select</label>
+                                    <label class="control-label" for="select">Mesure</label>
                                     {{ form_widget(form.quantity, {'attr': {'class': 'form-control'}}) }}
                                 </div>
                             </div>
@@ -44,7 +46,7 @@
                             {{ form_widget(form.point, { 'attr': {'class': 'form-control'} }) }}
                         </div>
                         <div class="form-group form-material">
-                            <button type="submit" class="btn btn-primary waves-effect waves-light">Ajouter</button>
+                            {{ form_widget(form.ajouter, {'attr': {'class' : 'btn btn-primary waves-effect waves-light'}}) }}
                         </div>
                         {{ form_end(form) }}
                     </div>
