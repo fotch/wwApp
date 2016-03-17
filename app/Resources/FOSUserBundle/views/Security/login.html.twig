@@ -1,0 +1,63 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+    <div class="page animsition" data-animsition-in="fade-in" data-animsition-out="fade-out">
+        <div class="page-content">
+            <div class="page-brand-info">
+                <div class="brand">
+                    <h2 class="brand-text font-size-40">WW_app</h2>
+                </div>
+                <p class="font-size-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="page-login-main">
+                <div class="brand visible-xs">
+                    <h3 class="brand-text font-size-40">Remark</h3>
+                </div>
+                <h3 class="font-size-24">Sign In</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <form action="{{ path("fos_user_security_check") }}" method="post">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                    <div class="form-group form-material">
+                        <input type="text" id="username" class="form-control empty" name="_username" value="{{ last_username }}" required="required" />
+                        <label class="floating-label" for="inputEmail">identifiant</label>
+                    </div>
+                    <div class="form-group form-material">
+                        <input type="password" id="password" class="form-control empty" name="_password" required="required" />
+                        <label class="floating-label" for="inputPassword">Mot de passe</label>
+                    </div>
+                    <div class="form-group clearfix">
+                        <div class="checkbox-custom checkbox-inline checkbox-primary pull-left">
+                            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                            <label for="inputCheckbox">Se souvenir de moi</label>
+                        </div>
+                        <a class="pull-right" href="forgot-password.html">Mot de passe oublié?</a>
+                    </div>
+                    <button type="submit" name="_submit" class="btn btn-primary btn-block">Connecter</button>
+                </form>
+                <p>Nous n'avez pas de compte? <a href="register-v2.html">S'inscrire</a></p>
+                <footer class="page-copyright">
+                    <p>WEBSITE BY amazingSurge</p>
+                    <p>© 2015. All RIGHT RESERVED.</p>
+                    <div class="social">
+                        <a class="btn btn-icon btn-round social-twitter" href="javascript:void(0)">
+                            <i class="icon bd-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a class="btn btn-icon btn-round social-facebook" href="javascript:void(0)">
+                            <i class="icon bd-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a class="btn btn-icon btn-round social-google-plus" href="javascript:void(0)">
+                            <i class="icon bd-google-plus" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+{% endblock fos_user_content %}
