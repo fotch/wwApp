@@ -1,0 +1,106 @@
+{% extends 'DashboardBundle:Default:index.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("/bundles/framework/js/vendor/jt-timepicker/jquery-timepicker.css") }}">
+    <link rel="stylesheet" href="{{ asset("/bundles/framework/js/vendor/bootstrap-datepicker/bootstrap-datepicker.css") }}">
+    <link rel="stylesheet" href="{{ asset("/bundles/framework/js/vendor/formvalidation/formValidation.css") }}">
+{% endblock %}
+
+{% block content %}
+    <div class="page-header">
+        <h1 class="page-title">Informations</h1>
+        <div class="page-header-actions">
+            <ol class="breadcrumb">
+                <li><a href="#">tableau de bord</a></li>
+                <li class="active">Paramêtres du compte</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="page-content container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Informations personnelles</h3>
+                    </div>
+                    <div class="panel-body container-fluid">
+                        {{ form_start(formInformation) }}
+                        <div class="form-group form-material">
+                            <label class="control-label" for="select">Civilité</label>
+                            {{ form_widget(formInformation.gender, { 'attr': {'class': 'form-control'} }) }}
+                        </div>
+
+                        <div class="form-group form-material">
+                            <label class="control-label" for="name">Nom</label>
+                            {{ form_widget(formInformation.lastname, { 'attr': {'class': 'form-control'} }) }}
+                        </div>
+
+                        <div class="form-group form-material">
+                            <label class="control-label" for="select">Prénom</label>
+                            {{ form_widget(formInformation.firstname, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+
+                        <div class="form-group form-material">
+                            <label class="control-label" for="quantityValue">Date de naissance</label>
+                            {{ form_widget(formInformation.birthday, { 'attr': {'class': 'form-control datepicker', 'data-autoclose': 'true'} }) }}
+                        </div>
+
+                        <div class="form-group form-material">
+                            {{ form_widget(formInformation.Enregistrer, {'attr': {'class' : 'btn btn-primary waves-effect waves-light'}}) }}
+                        </div>
+                        {{ form_end(formInformation) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Informations personnelles</h3>
+                    </div>
+                    <div class="panel-body container-fluid">
+                        {{ form_start(formAccount, {"attr": {'class': 'fv-form fv-form-bootstrap accountForm'} }) }}
+                        <div class="form-group form-material">
+                            <label class="control-label" for="select">Identifiant</label>
+                            {{ form_widget(formAccount.username, { 'attr': {'class': 'form-control'} }) }}
+                            <small id="username_validator" class="help-block" style="display: none">L'identifiant est obliagatoire</small>
+                        </div>
+
+                        <div class="form-group form-material">
+                            <label class="control-label" for="name">Mot de passe</label>
+                            {{ form_widget(formAccount.plainPassword.first, { 'attr': {'class': 'form-control'} }) }}
+                        </div>
+
+                        <div class="form-group form-material">
+                            <label class="control-label" for="select">Confirmation du mont de passe</label>
+                            {{ form_widget(formAccount.plainPassword.second, {'attr': {'class': 'form-control'}}) }}
+                            <small id="password_validator" class="help-block" style="display: none">Les mots de passe ne sont pas identique</small>
+                        </div>
+                        <div class="form-group form-material">
+                            {{ form_widget(formAccount.Enregistrer, {'attr': {'class' : 'btn btn-primary waves-effect waves-light'}}) }}
+                        </div>
+                        {{ form_end(formAccount) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset("/bundles/framework/js/vendor/bootstrap-datepicker/bootstrap-datepicker.js") }}"></script>
+    <script src="{{ asset("/bundles/framework/js/vendor/formvalidation/formValidation.min.js") }}"></script>
+    <script src="{{ asset("/bundles/framework/js/custom.js") }}"></script>
+{% endblock %}
+
+{% block customJs %}
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            Site.run();
+            $('.datepicker').datepicker({
+                autoclose: true
+            });
+        })
+    </script>
+{% endblock %}
+

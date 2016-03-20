@@ -29,4 +29,50 @@ class User extends BaseUser
     {
         parent::__construct();
     }
+
+    public function getUsername()
+    {
+        return parent::getUsername();
+    }
+
+    public function setUsername($username)
+    {
+        return parent::setUsername($username);
+    }
+
+    /**
+     * Gets the encrypted password.
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return parent::getPassword();
+    }
+
+    public function getPlainPassword()
+    {
+        return parent::getPlainPassword();
+    }
+
+    public function setPassword($password)
+    {
+        return parent::setPassword($password);
+    }
+
+    /**
+     * @ORM\ManyToOne(targetEntity="UserInformation")
+     * @ORM\JoinColumn(name="userInformation_id", referencedColumnName="id")
+     */
+
+    protected $userInformation;
+
+    /**
+     * @return mixed
+     */
+    public function getUserInformation()
+    {
+        return $this->userInformation;
+    }
+
 }

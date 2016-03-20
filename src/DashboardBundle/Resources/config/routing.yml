@@ -9,3 +9,15 @@ dashboard_aliments_create:
 dashboard_aliments_list:
     path: /aliments/list
     defaults: {_controller: DashboardBundle:Aliment:list}
+
+dashboard_recipes_create:
+    path: /recipes/create
+    defaults: {_controller: DashboardBundle:Recipe:create}
+
+dashboard_recipes_list:
+    path: /recipes/list
+    defaults: {_controller: DashboardBundle:Recipe:list}
+
+dashboard_userinformation_update:
+    path: /userinformation/update
+    defaults: {_controller: DashboardBundle:UserInformation:update}
